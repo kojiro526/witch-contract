@@ -99,7 +99,7 @@ if (Configure::read('debug')) {
  * Set server timezone to UTC. You can change it to another timezone of your
  * choice but using UTC makes time calculations / conversions easier.
  */
-date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Tokyo');
 
 /*
  * Configure the mbstring extension to use the correct encoding.
@@ -212,6 +212,8 @@ Type::build('timestamp')
  * Plugin::load('Migrations'); //Loads a single plugin named Migrations
  *
  */
+Plugin::load('BootstrapUI');
+
 
 /*
  * Only try to load DebugKit in development mode
@@ -220,3 +222,5 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+Configure::write('App.title', '魔法少女契約管理システム');
