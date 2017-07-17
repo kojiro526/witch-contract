@@ -1,4 +1,5 @@
 <?php
+$this->prepend('function_title', __('Candidate of magical girl'));
 $this->start('tb_actions');
 ?>
 <li><?= $this->Html->link(__('Edit Person'), ['action' => 'edit', $person->id]) ?> </li>

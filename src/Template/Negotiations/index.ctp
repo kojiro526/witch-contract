@@ -1,5 +1,6 @@
 <?php
 /* @var $this \Cake\View\View */
+$this->prepend('function_title', __('Negotiation proccess'));
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Negotiation'), ['action' => 'add']); ?></li>

@@ -2,6 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
+$this->prepend('function_title', __('Candidate of magical girl'));
 ?>
 <?php
 $this->start('tb_actions');

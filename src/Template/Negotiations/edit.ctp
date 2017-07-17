@@ -2,6 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
+$this->prepend('function_title', __('Negotiation proccess'));
 ?>
 <?php
 $this->start('tb_actions');

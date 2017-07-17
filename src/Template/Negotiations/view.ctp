@@ -1,4 +1,5 @@
 <?php
+$this->prepend('function_title', __('Negotiation proccess'));
 $this->start('tb_actions');
 ?>
 <li><?= $this->Html->link(__('Edit Negotiation'), ['action' => 'edit', $negotiation->id]) ?> </li>

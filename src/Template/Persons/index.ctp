@@ -1,5 +1,6 @@
 <?php
 /* @var $this \Cake\View\View */
+$this->prepend('function_title', __('Candidate of magical girl'));
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Person'), ['action' => 'add']); ?></li>

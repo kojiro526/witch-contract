@@ -7,9 +7,9 @@ $this->Html->css('BootstrapUI.dashboard', ['block' => true]);
 $this->prepend('tb_body_attrs', ' class="' . implode(' ', [$this->request->controller, $this->request->action]) . '" ');
 $this->start('tb_body_start');
 
-if(!$this->fetch('page_title')){
-    $this->start('page_title');
-    echo 'ダッシュボード';
+if(!$this->fetch('function_title')){
+    $this->start('function_title');
+    echo __('Dashboard');
     $this->end();
 }
 
@@ -52,7 +52,7 @@ if(!$this->fetch('page_title')){
                 <?= $this->fetch('tb_sidebar') ?>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header"><?= $this->fetch('page_title') ?></h1>
+                <h1 class="page-header"><?= $this->fetch('function_title') ?></h1>
 <?php
 /**
  * Default `flash` block.
