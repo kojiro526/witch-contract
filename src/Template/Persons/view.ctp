@@ -44,7 +44,7 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Status') ?></td>
-            <td><?= $this->Number->format($person->status) ?></td>
+            <td><?= h($person->getStatus()->getLabel()) ?></td>
         </tr>
         <tr>
             <td><?= __('Hope') ?></td>

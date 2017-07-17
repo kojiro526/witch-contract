@@ -2,7 +2,7 @@
 namespace App\Lib;
 
 use Cake\ORM\TableRegistry;
-use App\Status\Persons\StatusPerson;
+use App\Status\Persons\StatePerson;
 
 class Summary
 {
@@ -20,7 +20,7 @@ class Summary
     {
         return $this->Persons->find()
             ->where([
-            'Persons.status' => StatusPerson::$STATUS_CANDIDATE
+            'Persons.status' => StatePerson::$STATUS_CANDIDATE
         ])
             ->count();
     }
@@ -29,7 +29,7 @@ class Summary
     {
         return $this->Persons->find()
             ->where([
-            'Persons.status' => StatusPerson::$STATUS_CONTRACTED
+            'Persons.status' => StatePerson::$STATUS_CONTRACTED
         ])
             ->count();
     }
@@ -38,7 +38,7 @@ class Summary
     {
         return $this->Persons->find()
             ->where([
-            'Persons.status' => StatusPerson::$STATUS_WITCHE
+            'Persons.status' => StatePerson::$STATUS_WITCH
         ])
             ->count();
     }

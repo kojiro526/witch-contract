@@ -3,6 +3,8 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
+use App\Status\Persons\StatusPerson;
+use App\Lib\PersonStateFactory;
 
 /**
  * Person Entity
@@ -46,5 +48,9 @@ class Person extends Entity
             $query->limit($limit);
         }
         return $query;
+    }
+    
+    public function getStatus(){
+        return PersonStateFactory::createInstance($this->status);
     }
 }

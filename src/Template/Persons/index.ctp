@@ -28,7 +28,7 @@ $this->start('tb_actions');
             <td><?= $this->Number->format($person->id) ?></td>
             <td><?= h($person->name) ?></td>
             <td><?= $this->Number->format($person->age) ?></td>
-            <td><?= $this->Number->format($person->status) ?></td>
+            <td><?= h($person->getStatus()->getLabel()) ?></td>
             <td><?= $this->Number->format($person->hope) ?></td>
             <td><?= h($person->created) ?></td>
             <td><?= h($person->modified) ?></td>

@@ -29,7 +29,6 @@ $this->end();
     <?php
     echo $this->Form->control('name');
     echo $this->Form->control('age');
-    echo $this->Form->control('status');
     echo $this->Form->control('hope');
     ?>
 </fieldset>
