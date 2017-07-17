@@ -1,4 +1,6 @@
 <?php
+$this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js', ['block' => true]);
+$this->Html->script('top-index.js', ['block' => true]);
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
@@ -38,6 +40,13 @@ $this->end();
         </div>
     </div>
 </div>
+</div>
+
+<div class="clearfix">
+    <div class="col-md-6">
+        <canvas id="chart-by-persons"></canvas>
+    </div>
+    <div class="col-md-6"></div>
 </div>
 
 <h2><?= __('Recent negotiation process') ?></h2>
