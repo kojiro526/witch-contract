@@ -13,7 +13,10 @@ use App\Lib\PersonStateFactory;
  * @property string $name
  * @property int $age
  * @property int $status
+ * @property string $reliability
+ * @property int $expectation
  * @property int $hope
+ * @property int $uncleanness
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -32,8 +35,13 @@ class Person extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false
+        'name' => true,
+        'age' => true,
+        'reliability' => true,
+        'expectation' => true,
+        'hope' => true,
+        'uncleanness' => true,
+        '*' => false
     ];
     
     public function findNegotiations(){

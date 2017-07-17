@@ -10,6 +10,8 @@ use Cake\ORM\Entity;
  * @property int $person_id
  * @property \Cake\I18n\FrozenDate $negotiated_at
  * @property string $body
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \App\Model\Entity\Person $person
  */
@@ -26,7 +28,8 @@ class Negotiation extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false
+        'negotiated_at' => true,
+        'body' => true,
+        '*' => false
     ];
 }

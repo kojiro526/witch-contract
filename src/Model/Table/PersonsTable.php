@@ -72,9 +72,24 @@ class PersonsTable extends Table
             ->notEmpty('status');
 
         $validator
+            ->integer('reliability')
+            ->requirePresence('reliability', 'create')
+            ->notEmpty('reliability');
+
+        $validator
+            ->integer('expectation')
+            ->requirePresence('expectation', 'create')
+            ->notEmpty('expectation');
+
+        $validator
             ->integer('hope')
             ->requirePresence('hope', 'create')
             ->notEmpty('hope');
+
+        $validator
+            ->integer('uncleanness')
+            ->requirePresence('uncleanness', 'create')
+            ->notEmpty('uncleanness');
 
         return $validator;
     }

@@ -47,6 +47,14 @@ $this->end();
             <td><?= h($person->getStatus()->getLabel()) ?></td>
         </tr>
         <tr>
+            <td><?= __('Reliability') ?></td>
+            <td><?= h($person->reliability) ?></td>
+        </tr>
+        <tr>
+            <td><?= __('Expectation') ?></td>
+            <td><?= $this->Number->format($person->expectation) ?></td>
+        </tr>
+        <tr>
             <td><?= __('Hope') ?></td>
             <td><?= $this->Number->format($person->hope) ?></td>
         </tr>

@@ -29,6 +29,8 @@ $this->end();
     <?php
     echo $this->Form->control('name');
     echo $this->Form->control('age');
+    echo $this->Form->control('reliability', ['options' => ['A', 'B', 'C', 'D']]);
+    echo $this->Form->control('expectation');
     echo $this->Form->control('hope');
     ?>
 </fieldset>
