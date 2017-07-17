@@ -39,9 +39,7 @@ class PersonsController extends AppController
      */
     public function view($id = null)
     {
-        $person = $this->Persons->get($id, [
-            'contain' => ['Negotiations']
-        ]);
+        $person = $this->Persons->get($id);
         
         $this->set('person', $person);
         $this->set('_serialize', ['person']);

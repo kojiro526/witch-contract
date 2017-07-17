@@ -2,6 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\ORM\TableRegistry;
 
 /**
  * Person Entity
@@ -32,4 +33,18 @@ class Person extends Entity
         '*' => true,
         'id' => false
     ];
+    
+    public function findNegotiations(){
+        $negotiations_table = TableRegistry::get('Negotiations');
+        return $negotiations_table->find()->where(['Negotiations.person_id' => $this->id]);
+    }
+    
+    public function findRecentNegotiations($limit = null){
+        $query = $this->findNegotiations();
+        $query->order(['Negotiations.negotiated_at' => 'desc', 'Negotiations.id' => 'desc']);
+        if(empty($limit)){
+            $query->limit($limit);
+        }
+        return $query;
+    }
 }

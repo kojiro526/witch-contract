@@ -61,39 +61,26 @@ $this->end();
     </table>
 </div>
 
-<div class="panel panel-default">
-    <!-- Panel header -->
-    <div class="panel-heading">
-        <h3 class="panel-title"><?= __('Related Negotiations') ?></h3>
+<h2><?= __('Related Negotiations') ?></h2>
+<?php if (!empty($person->findRecentNegotiations()->count())): ?>
+    <?php foreach ($person->findRecentNegotiations(100) as $negotiations): ?>
+    <div class="panel panel-default">
+        <!-- Panel header -->
+        <div class="panel-heading">
+            <?= __('Negotiated at') ?>: <?= h($negotiations->negotiated_at) ?>
+        </div>
+        <div class="panel-body">
+            <?= h($negotiations->body) ?>
+        </div>
+        <div class="panel-footer text-right">
+            <div class="actions">
+                <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'view', $negotiations->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'edit', $negotiations->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                <?= $this->Form->postLink('', ['controller' => 'Negotiations', 'action' => 'delete', $negotiations->id], ['confirm' => __('Are you sure you want to delete # {0}?', $negotiations->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+            </div>
+        </div>
     </div>
-    <?php if (!empty($person->negotiations)): ?>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th><?= __('Id') ?></th>
-                <th><?= __('Person Id') ?></th>
-                <th><?= __('Negotiated At') ?></th>
-                <th><?= __('Body') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($person->negotiations as $negotiations): ?>
-                <tr>
-                    <td><?= h($negotiations->id) ?></td>
-                    <td><?= h($negotiations->person_id) ?></td>
-                    <td><?= h($negotiations->negotiated_at) ?></td>
-                    <td><?= h($negotiations->body) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'view', $negotiations->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
-                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'edit', $negotiations->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                        <?= $this->Form->postLink('', ['controller' => 'Negotiations', 'action' => 'delete', $negotiations->id], ['confirm' => __('Are you sure you want to delete # {0}?', $negotiations->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p class="panel-body">no related Negotiations</p>
-    <?php endif; ?>
-</div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p class="panel-body">no Negotiations</p>
+<?php endif; ?>
