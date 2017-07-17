@@ -57,15 +57,15 @@ $this->end();
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($summary->findRecentNegotiations() as $negotiations): ?>
+            <?php foreach ($summary->findRecentNegotiations() as $negotiation): ?>
                 <tr>
-                    <td><?= h($negotiations->person->name) ?></td>
-                    <td><?= h($negotiations->negotiated_at) ?></td>
-                    <td><?= h($negotiations->body) ?></td>
+                    <td><?= $this->Html->link($negotiation->person->name, ['controller' => 'Persons', 'action' => 'view', $negotiation->person_id]) ?></td>
+                    <td><?= h($negotiation->negotiated_at) ?></td>
+                    <td><?= h($negotiation->body) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'view', $negotiations->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
-                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'edit', $negotiations->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                        <?= $this->Form->postLink('', ['controller' => 'Negotiations', 'action' => 'delete', $negotiations->id], ['confirm' => __('Are you sure you want to delete # {0}?', $negotiations->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'view', $negotiation->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                        <?= $this->Html->link('', ['controller' => 'Negotiations', 'action' => 'edit', $negotiation->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                        <?= $this->Form->postLink('', ['controller' => 'Negotiations', 'action' => 'delete', $negotiation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $negotiation->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
