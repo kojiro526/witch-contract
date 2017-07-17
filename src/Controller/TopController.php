@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Lib\Summary;
 
 /**
  * Top Controller
@@ -22,8 +23,9 @@ class TopController extends AppController
      */
     public function index()
     {
+        $summary = new Summary();
 
-        $this->set(compact('top'));
+        $this->set(compact('summary'));
         $this->set('_serialize', ['top']);
     }
 

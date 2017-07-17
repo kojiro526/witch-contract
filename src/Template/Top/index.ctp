@@ -10,13 +10,31 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 
-<div class="">
-<div class="ds-counter-candidates">
-<i class=""></i>
-<div class="">
+<div class="col-md-4">
+    <div class="summary-counter-candidates">
+        <div class="summary-title"><?= __('Candidates') ?></div>
+        <i class=""></i>
+        <div class="summary-number">
+            <?= $summary->countCandidates(); ?>
+        </div>
+    </div>
 </div>
+<div class="col-md-4">
+    <div class="summary-counter-candidates">
+        <div class="summary-title"><?= __('Contracted') ?></div>
+        <i class=""></i>
+        <div class="summary-number">
+            <?= $summary->countContracted(); ?>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="summary-counter-candidates">
+        <div class="summary-title"><?= __('Witches') ?></div>
+        <i class=""></i>
+        <div class="summary-number">
+            <?= $summary->countWitches(); ?>
+        </div>
+    </div>
 </div>
 
-</div>
-
-<div>index</div>

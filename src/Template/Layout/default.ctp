@@ -73,6 +73,7 @@ $html5Shim =
     <![endif]-->
 HTML;
 $this->prepend('css', $this->Html->css(['bootstrap/bootstrap']));
+$this->prepend('css', $this->Html->css(['myapp']));
 
 $this->append('css', $html5Shim);
 
