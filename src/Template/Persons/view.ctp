@@ -17,7 +17,6 @@ $this->start('tb_sidebar');
 <li><?= $this->Form->postLink(__('Delete Person'), ['action' => 'delete', $person->id], ['confirm' => __('Are you sure you want to delete # {0}?', $person->id)]) ?> </li>
 <li><?= $this->Html->link(__('List Persons'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New Person'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Negotiations'), ['controller' => 'Negotiations', 'action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New Negotiation'), ['controller' => 'Negotiations', 'action' => 'add']) ?> </li>
 </ul>
 <?php
