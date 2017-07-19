@@ -7,6 +7,9 @@ $this->start('tb_actions');
 <li><?= $this->Html->link(__('List Persons'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New Person'), ['action' => 'add']) ?> </li>
 <li><?= $this->Html->link(__('New Negotiation'), ['controller' => 'Negotiations', 'action' => 'add']) ?> </li>
+<?php if( $person->getStatus()->isCandidate() ) : ?>
+<li><?= $this->Form->postLink(__('Sign a contract'), ['controller' => 'Persons', 'action' => 'contract', $person->id]) ?> </li>
+<?php endif; ?>
 <?php
 $this->end();
 
@@ -18,6 +21,9 @@ $this->start('tb_sidebar');
 <li><?= $this->Html->link(__('List Persons'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New Person'), ['action' => 'add']) ?> </li>
 <li><?= $this->Html->link(__('New Negotiation'), ['controller' => 'Negotiations', 'action' => 'add']) ?> </li>
+<?php if( $person->getStatus()->isCandidate() ) : ?>
+<li><?= $this->Form->postLink(__('Sign a contract'), ['controller' => 'Persons', 'action' => 'contract', $person->id]) ?> </li>
+<?php endif; ?>
 </ul>
 <?php
 $this->end();
@@ -42,7 +48,7 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Status') ?></td>
-            <td><?= h($person->getStatus()->getLabel()) ?></td>
+            <td><?= h($person->getStatus()->getLabel()) ?> <?= $this->element('Persons/contracted_at', ['person' => $person]) ?></td>
         </tr>
         <tr>
             <td><?= __('Reliability') ?></td>

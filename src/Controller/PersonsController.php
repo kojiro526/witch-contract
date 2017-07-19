@@ -2,6 +2,10 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Network\Exception\BadRequestException;
+use App\Status\Persons\StatePerson;
+use Cake\Chronos\Date;
+use Cake\I18n\Time;
 
 /**
  * Persons Controller
@@ -109,5 +113,26 @@ class PersonsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    
+    public function contract($id = null)
+    {
+        $person = $this->Persons->get($id);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            if(!$person->getStatus()->isCandidate()){
+                throw new  BadRequestException(__("Unexpected status. status={0} id={1}", $person->status, $person->id));
+            }
+            
+            $person->status = StatePerson::$STATUS_CONTRACTED;
+            $person->contracted_at = (new Time())->now();
+            if($this->Persons->save($person)){
+                $this->Flash->success(__('Contract was concluded.'));
+            }else{
+                $this->Flash->error(__('Failed to conclude the contract.'));
+            }
+        }
+        $this->set(compact('person'));
+        $this->set('_serialize', ['person']);
+        $this->render('view');
     }
 }

@@ -12,4 +12,10 @@ class StatePersonCandidate extends StatePerson {
     public function getLabel(){
         return __('Candidate');
     }
+
+    public function isCandidate()
+    {
+        return true;
+    }
+    
 }

@@ -42,6 +42,10 @@ $this->end();
 </div>
 </div>
 
+<div>
+    <canvas id="chart-quota" height="30px"></canvas>
+</div>
+
 <div class="clearfix">
     <div class="col-md-6">
         <canvas id="chart-by-persons"></canvas>

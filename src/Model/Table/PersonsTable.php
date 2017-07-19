@@ -72,7 +72,6 @@ class PersonsTable extends Table
             ->notEmpty('status');
 
         $validator
-            ->integer('reliability')
             ->requirePresence('reliability', 'create')
             ->notEmpty('reliability');
 

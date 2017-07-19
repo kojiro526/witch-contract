@@ -17,6 +17,7 @@ use App\Lib\PersonStateFactory;
  * @property int $expectation
  * @property int $hope
  * @property int $uncleanness
+ * @property \Cake\I18n\FrozenDate $contracted_at
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -41,6 +42,7 @@ class Person extends Entity
         'expectation' => true,
         'hope' => true,
         'uncleanness' => true,
+        'contracted_at' => true,
         '*' => false
     ];
     

@@ -12,4 +12,9 @@ class StatePersonContracted extends StatePerson{
     public function getLabel(){
         return __('Contracted');
     }
+
+    public function isContracted()
+    {
+        return true;
+    }
 }

@@ -11,4 +11,14 @@ abstract class StatePerson {
     
     abstract protected function getValue();
     abstract protected function getLabel();
+
+    public function isCandidate()
+    {
+        return false;
+    }
+    
+    public function isContracted()
+    {
+        return false;
+    }
 }
