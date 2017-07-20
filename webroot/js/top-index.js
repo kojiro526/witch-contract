@@ -4,13 +4,13 @@ $(function() {
         datasets: [
           {
             label: '巴マミ',
-            backgroundColor: "rgba(255,99,132,0.3)",
-            data: [10]
+            backgroundColor: "rgba(255,99,132,0.8)",
+            data: [200]
           },
           {
             label: '暁美ほむら',
-            backgroundColor: "rgba(132,255,132,0.3)",
-            data: [20]
+            backgroundColor: "rgba(132,255,132,0.8)",
+            data: [900]
           }
         ],
         lineAtIndex:10 
