@@ -1,0 +1,259 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-08-10 21:01+0900\n"
+"PO-Revision-Date: 2017-08-10 23:02+0900\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#: Controller/NegotiationsController.php:64;90
+msgid "The negotiation has been saved."
+msgstr "交渉履歴が更新されました。"
+
+#: Controller/NegotiationsController.php:68;94
+msgid "The negotiation could not be saved. Please, try again."
+msgstr "交渉履歴を更新できませんでした。もう一度お試し下さい。"
+
+#: Controller/NegotiationsController.php:113
+msgid "The negotiation has been deleted."
+msgstr "交渉履歴を削除しました。"
+
+#: Controller/NegotiationsController.php:115
+msgid "The negotiation could not be deleted. Please, try again."
+msgstr "交渉履歴を削除できませんでした。もう一度お試し下さい。"
+
+#: Controller/PersonsController.php:63;88
+msgid "The person has been saved."
+msgstr "魔法少女候補を更新しました。"
+
+#: Controller/PersonsController.php:67;92
+msgid "The person could not be saved. Please, try again."
+msgstr "魔法少女候補を更新できませんでした。もう一度お試し下さい。"
+
+#: Controller/PersonsController.php:110
+msgid "The person has been deleted."
+msgstr "魔法少女候補を削除しました。"
+
+#: Controller/PersonsController.php:112
+msgid "The person could not be deleted. Please, try again."
+msgstr "魔法少女候補を削除できませんでした。もう一度お試し下さい。"
+
+#: Controller/PersonsController.php:123
+msgid "Unexpected status. status={0} id={1}"
+msgstr ""
+
+#: Controller/PersonsController.php:129
+msgid "Contract was concluded."
+msgstr "契約を締結しました。"
+
+#: Controller/PersonsController.php:131
+msgid "Failed to conclude the contract."
+msgstr "契約を締結できませんでした。"
+
+#: Status/Persons/StatePersonCandidate.php:13
+msgid "Candidate"
+msgstr "魔法少女候補"
+
+#: Status/Persons/StatePersonContracted.php:13 Template/Top/index.ctp:27
+msgid "Contracted"
+msgstr "契約済"
+
+#: Status/Persons/StatePersonWitch.php:13
+msgid "Witch"
+msgstr "魔女"
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr "エラー"
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr "戻る"
+
+#: Template/Layout/TwitterBootstrap/dashboard.ctp:12
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: Template/Negotiations/add.ctp:5 Template/Negotiations/edit.ctp:5
+#: Template/Negotiations/index.ctp:3 Template/Negotiations/view.ctp:2
+msgid "Negotiation proccess"
+msgstr "交渉経緯"
+
+#: Template/Negotiations/add.ctp:10;19 Template/Negotiations/edit.ctp:18;35
+#: Template/Negotiations/view.ctp:7;19 Template/Persons/add.ctp:11;20
+#: Template/Persons/edit.ctp:19;36 Template/Persons/index.ctp:7
+msgid "List Negotiations"
+msgstr "交渉一覧"
+
+#: Template/Negotiations/add.ctp:11;20 Template/Negotiations/edit.ctp:19;36
+#: Template/Negotiations/index.ctp:7 Template/Negotiations/view.ctp:9;21
+#: Template/Persons/add.ctp:10;19 Template/Persons/edit.ctp:18;35
+#: Template/Persons/view.ctp:7;21
+msgid "List Persons"
+msgstr "魔法少女候補一覧"
+
+#: Template/Negotiations/add.ctp:12;21 Template/Negotiations/edit.ctp:20;37
+#: Template/Negotiations/index.ctp:8 Template/Negotiations/view.ctp:10;22
+#: Template/Persons/index.ctp:6 Template/Persons/view.ctp:8;22
+msgid "New Person"
+msgstr "新規魔法少女候補"
+
+#: Template/Negotiations/add.ctp:28 Template/Persons/add.ctp:28
+msgid "Add {0}"
+msgstr "新規登録"
+
+#: Template/Negotiations/add.ctp:35 Template/Persons/add.ctp:37
+msgid "Add"
+msgstr "追加"
+
+#: Template/Negotiations/edit.ctp:12;29 Template/Negotiations/index.ctp:32
+#: Template/Persons/edit.ctp:12;29 Template/Persons/index.ctp:38
+#: Template/Persons/view.ctp:91 Template/Top/index.ctp:81
+msgid "Delete"
+msgstr "削除"
+
+#: Template/Negotiations/edit.ctp:14;31 Template/Negotiations/index.ctp:32
+#: Template/Negotiations/view.ctp:6;18 Template/Persons/edit.ctp:14;31
+#: Template/Persons/index.ctp:38 Template/Persons/view.ctp:6;20;91
+#: Template/Top/index.ctp:81
+msgid "Are you sure you want to delete # {0}?"
+msgstr "# {0}を削除しますか？"
+
+#: Template/Negotiations/edit.ctp:44 Template/Persons/edit.ctp:44
+msgid "Edit {0}"
+msgstr "編集"
+
+#: Template/Negotiations/edit.ctp:51 Template/Persons/edit.ctp:53
+msgid "Save"
+msgstr "保存"
+
+#: Template/Negotiations/index.ctp:6 Template/Negotiations/view.ctp:8;20
+#: Template/Persons/add.ctp:12;21 Template/Persons/edit.ctp:20;37
+#: Template/Persons/index.ctp:8 Template/Persons/view.ctp:9;23
+msgid "New Negotiation"
+msgstr "新規交渉経緯"
+
+#: Template/Negotiations/index.ctp:18 Template/Persons/index.ctp:22
+#: Template/Top/index.ctp:69
+msgid "Actions"
+msgstr "操作"
+
+#: Template/Negotiations/index.ctp:30 Template/Persons/index.ctp:36
+#: Template/Persons/view.ctp:89 Template/Top/index.ctp:79
+msgid "View"
+msgstr "詳細"
+
+#: Template/Negotiations/index.ctp:31 Template/Persons/index.ctp:37
+#: Template/Persons/view.ctp:90 Template/Top/index.ctp:80
+msgid "Edit"
+msgstr "編集"
+
+#: Template/Negotiations/index.ctp:40 Template/Persons/index.ctp:46
+msgid "previous"
+msgstr "前へ"
+
+#: Template/Negotiations/index.ctp:42 Template/Persons/index.ctp:48
+msgid "next"
+msgstr "次へ"
+
+#: Template/Negotiations/view.ctp:5;17
+msgid "Edit Negotiation"
+msgstr "交渉経緯を編集"
+
+#: Template/Negotiations/view.ctp:6;18
+msgid "Delete Negotiation"
+msgstr "交渉経緯を削除"
+
+#: Template/Negotiations/view.ctp:34
+msgid "Person"
+msgstr "魔法少女候補"
+
+#: Template/Negotiations/view.ctp:38 Template/Persons/view.ctp:42
+msgid "Id"
+msgstr "ID"
+
+#: Template/Negotiations/view.ctp:42 Template/Top/index.ctp:67
+msgid "Negotiated At"
+msgstr "交渉日時"
+
+#: Template/Negotiations/view.ctp:46 Template/Top/index.ctp:68
+msgid "Body"
+msgstr "内容"
+
+#: Template/Persons/add.ctp:5 Template/Persons/edit.ctp:5
+#: Template/Persons/index.ctp:3 Template/Persons/view.ctp:2
+msgid "Candidate of magical girl"
+msgstr "魔法少女候補"
+
+#: Template/Persons/view.ctp:5;19
+msgid "Edit Person"
+msgstr "魔法少女候補を編集"
+
+#: Template/Persons/view.ctp:6;20
+msgid "Delete Person"
+msgstr "魔法少女候補を削除"
+
+#: Template/Persons/view.ctp:11;25
+msgid "Sign a contract"
+msgstr "契約を締結"
+
+#: Template/Persons/view.ctp:38 Template/Top/index.ctp:66
+msgid "Name"
+msgstr "名前"
+
+#: Template/Persons/view.ctp:46
+msgid "Age"
+msgstr "年齢"
+
+#: Template/Persons/view.ctp:50
+msgid "Status"
+msgstr "状態"
+
+#: Template/Persons/view.ctp:54
+msgid "Reliability"
+msgstr "確度"
+
+#: Template/Persons/view.ctp:58
+msgid "Expectation"
+msgstr "見込み値"
+
+#: Template/Persons/view.ctp:62
+msgid "Hope"
+msgstr "希望値"
+
+#: Template/Persons/view.ctp:66
+msgid "Created"
+msgstr "作成日時"
+
+#: Template/Persons/view.ctp:70
+msgid "Modified"
+msgstr "更新日時"
+
+#: Template/Persons/view.ctp:76 Template/Top/index.ctp:60
+msgid "Related Negotiations"
+msgstr "関連する交渉経緯"
+
+#: Template/Persons/view.ctp:82
+msgid "Negotiated at"
+msgstr "交渉日時"
+
+#: Template/Top/index.ctp:18
+msgid "Candidates"
+msgstr "魔法少女候補"
+
+#: Template/Top/index.ctp:36
+msgid "Witches"
+msgstr "魔女"
+
+#: Template/Top/index.ctp:56
+msgid "Recent negotiation process"
+msgstr "最近の交渉経緯"
