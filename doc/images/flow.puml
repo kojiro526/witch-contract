@@ -1,0 +1,41 @@
+@startuml{flow.png}
+
+skinparam ParticipantPadding 20
+skinparam BoxPadding 20
+
+title システム運用フロー
+hide footbox
+
+actor 利用者 as qb
+actor 魔法少女 as girl
+participant 本システム as system
+
+qb -> system : 魔法少女候補登録
+
+hnote over girl : 状態：魔法少女候補
+
+loop 契約成立まで繰り返し
+qb -> girl : 契約交渉
+qb -> system : 契約交渉過程記録
+qb -> system : 魔法少女候補状態更新
+
+  alt 契約が成立した場合
+  qb -> system : 契約成立登録
+  end
+end
+
+hnote over girl : 状態：魔法少女
+
+loop 魔女化するまで繰り返し
+qb -> system : 魔法少女状態更新
+girl -> system : ソウルジェムからAPI経由で自動更新\n（API実装後）
+
+  alt ソウルジェムの汚れが閾値を越えた場合
+  system -> system : 魔法少女状態更新
+  end
+end
+
+hnote over girl : 状態：魔女
+
+
+@enduml
