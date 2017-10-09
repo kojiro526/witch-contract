@@ -8,27 +8,27 @@
 
 ## テーブル定義
 
-| Field         | Type     | Null | Key | Default | Extra          |
-|:--------------|:---------|:-----|:----|:--------|:---------------|
-| id            | int(11)  | NO   | PRI | NULL    | auto_increment |
-| person_id     | int(11)  | NO   | MUL | NULL    |                |
-| negotiated_at | date     | NO   |     | NULL    |                |
-| body          | text     | NO   |     | NULL    |                |
-| created       | datetime | NO   |     | NULL    |                |
-| modified      | datetime | NO   |     | NULL    |                |
+| No | カラム名（論理） | カラム名（物理） | 型       | NULL | 初期値 | その他 |
+|---:|:-----------------|:-----------------|:---------|:-----|:-------|:-------|
+|  1 | id               | ID               | int(11)  | NO   | NULL   | AI     |
+|  2 | person_id        | person_id        | int(11)  | NO   | NULL   |        |
+|  3 | negotiated_at    | 交渉日時         | date     | NO   | NULL   |        |
+|  4 | body             | 本文             | text     | NO   | NULL   |        |
+|  5 | created          | 作成日           | datetime | NO   | NULL   |        |
+|  6 | modified         | 更新日           | datetime | NO   | NULL   |        |
 
-### id
+**1. ID**
 
 レコードを一意に指定するID。
 
-### person_id
+**2. person_id**
 
 personsテーブルの外部キー。
 
-### negotiated_at
+**3. 契約日時**
 
 交渉を行った日時。
 
-### body
+**4. 本文**
 
 交渉の本文
