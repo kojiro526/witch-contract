@@ -42,15 +42,22 @@ $this->end();
 </div>
 </div>
 
+<h2>エネルギー回収計画</h2>
+<div>
+見込み値合計/今期目標 = 1550/5000
+</div>
 <div>
     <canvas id="chart-quota" height="30px"></canvas>
 </div>
 
+<h2>状態管理</h2>
 <div class="clearfix">
     <div class="col-md-6">
         <canvas id="chart-by-persons"></canvas>
     </div>
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <canvas id="uncleanness-by-persons"></canvas>
+    </div>
 </div>
 
 <h2><?= __('Recent negotiation process') ?></h2>
