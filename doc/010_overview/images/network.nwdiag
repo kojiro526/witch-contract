@@ -1,0 +1,14 @@
+nwdiag {
+    network Internal {
+        address = "10.250.5.0/24"
+
+        試験 [address = "10.250.5.4"];
+        sanitize [address = "10.250.5.3"];
+    }
+    network Manage {
+        address = "10.250.254.0/24"
+
+        試験 [address = "10.250.254.82"];
+        sanitize [address = "10.250.254.81"];
+    }
+}

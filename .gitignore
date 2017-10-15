@@ -2,6 +2,7 @@
 /config/app.php
 /tmp/*
 /logs/*
+/doc/tmp/*
 !.gitkeep
 
 # IDE and editor specific files #
