@@ -8,27 +8,27 @@
 
 ### テーブル定義
 
-| No | カラム名（論理） | カラム名（物理） | 型       | NULL | 初期値 | その他 |
-|---:|:-----------------|:-----------------|:---------|:-----|:-------|:-------|
-|  1 | id               | ID               | int(11)  | NO   | NULL   | AI     |
-|  2 | person_id        | person_id        | int(11)  | NO   | NULL   |        |
-|  3 | negotiated_at    | 交渉日時         | date     | NO   | NULL   |        |
-|  4 | body             | 本文             | text     | NO   | NULL   |        |
-|  5 | created          | 作成日           | datetime | NO   | NULL   |        |
-|  6 | modified         | 更新日           | datetime | NO   | NULL   |        |
+| No | カラム名（論理） | カラム名（物理） | 型       | NULL | 初期値 | その他   |
+|---:|:-----------------|:-----------------|:---------|:-----|:-------|:---------|
+|  1 | ID               | id               | int(11)  | NO   | NULL   | AI       |
+|  2 | person_id        | person_id        | int(11)  | NO   | NULL   |          |
+|  3 | 交渉日時         | negotiated_at    |          | date | NO     | NULL   | |
+|  4 | 本文             | body             | text     | NO   | NULL   |          |
+|  5 | 作成日           | created          | datetime | NO   | NULL   |          |
+|  6 | 更新日           | modified         | datetime | NO   | NULL   |          |
 
-**1. ID**
+1. **ID**
 
-レコードを一意に指定するID。
+    レコードを一意に指定するID。
 
-**2. person_id**
+2. **person_id**
 
-personsテーブルの外部キー。
+    personsテーブルの外部キー。
 
-**3. 契約日時**
+3. **契約日時**
 
-交渉を行った日時。
+    交渉を行った日時。
 
-**4. 本文**
+4. **本文**
 
-交渉の本文
+    交渉の本文
