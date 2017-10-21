@@ -20,6 +20,8 @@
 | 10 | 作成日           | created          | datetime    | NO   | NULL   |        |
 | 11 | 更新日           | modified         | datetime    | NO   | NULL   |        |
 
+#### カラム詳細
+
 1. **ID**
 
     レコードを一意に指定するID。
