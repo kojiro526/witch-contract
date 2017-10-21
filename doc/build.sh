@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 図を生成
+dot ./**/images/*.dot -Tpng -O
 java -jar ~/Downloads/plantuml.jar ./**/images/*.puml
 blockdiag -Tpng --antialias --no-transparency ./**/images/*.blockdiag
 seqdiag -Tpng --antialias --no-transparency ./**/images/*.seqdiag

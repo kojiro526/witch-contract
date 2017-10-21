@@ -1,14 +1,14 @@
 nwdiag {
-    network Internal {
-        address = "10.250.5.0/24"
+    default_fontsize = 14
+    network DMZ {
+        address = "192.0.2.0/24"
 
-        試験 [address = "10.250.5.4"];
-        sanitize [address = "10.250.5.3"];
+        WEB [address = "192.0.2.11"];
     }
-    network Manage {
-        address = "10.250.254.0/24"
+    network DB {
+        address = "10.10.10.0/24"
 
-        試験 [address = "10.250.254.82"];
-        sanitize [address = "10.250.254.81"];
+        WEB [address = "10.10.10.11"];
+        DB [address = "10.10.10.21"];
     }
 }
