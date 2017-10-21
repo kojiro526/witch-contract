@@ -28,6 +28,16 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<div class="row">
+    <div class="col-sm-6" style="font-size: 24px; margin-bottom: 12px">
+        <span class="label label-info"><?= $person->getStatus()->getLabel() ?></span>
+    </div>
+    <div class="col-sm-offset-2 col-sm-4" style="margin-bottom: 12px">
+        <?php if($person->getStatus()->isCandidate()): ?>
+        <?= $this->Form->button(__('Register as contractor'), ['class' => 'btn btn-primary', 'style' => 'width: 100%', 'confirm' => __('Are you sure?')]) ?>
+        <?php endif; ?>
+    </div>
+</div>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -50,10 +60,12 @@ $this->end();
             <td><?= __('Status') ?></td>
             <td><?= h($person->getStatus()->getLabel()) ?> <?= $this->element('Persons/contracted_at', ['person' => $person]) ?></td>
         </tr>
+        <?php if($person->getStatus()->isCandidate()): ?>
         <tr>
             <td><?= __('Reliability') ?></td>
             <td><?= h($person->reliability) ?></td>
         </tr>
+        <?php endif; ?>
         <tr>
             <td><?= __('Expectation') ?></td>
             <td><?= $this->Number->format($person->expectation) ?></td>
@@ -62,6 +74,12 @@ $this->end();
             <td><?= __('Hope') ?></td>
             <td><?= $this->Number->format($person->hope) ?></td>
         </tr>
+        <?php if(!$person->getStatus()->isCandidate()): ?>
+        <tr>
+            <td><?= __('Uncleanness') ?></td>
+            <td><?= $this->Number->format($person->uncleanness) ?></td>
+        </tr>
+        <?php endif; ?>
         <tr>
             <td><?= __('Created') ?></td>
             <td><?= h($person->created) ?></td>

@@ -32,5 +32,5 @@ $this->end();
     echo $this->Form->control('body');
     ?>
 </fieldset>
-<?= $this->Form->button(__("Add")); ?>
+<?= $this->Form->button(__("Add"), ['class' => 'btn-primary']); ?>
 <?= $this->Form->end() ?>

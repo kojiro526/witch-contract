@@ -40,15 +40,24 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?= $this->Form->create($person); ?>
+<div class="row">
+    <div class="col-sm-6" style="font-size: 24px; margin-bottom: 12px">
+        <span class="label label-info"><?= $person->getStatus()->getLabel() ?></span>
+    </div>
+</div>
 <fieldset>
     <legend><?= __('Edit {0}', ['Person']) ?></legend>
     <?php
     echo $this->Form->control('name');
     echo $this->Form->control('age');
-    echo $this->Form->control('reliability', ['options' => ['A', 'B', 'C', 'D']]);
+    echo $this->Form->control('reliability', ['options' => ['A', 'B', 'C', 'D'], 'disabled' => !($person->getStatus()->isCandidate())]);
     echo $this->Form->control('expectation');
     echo $this->Form->control('hope');
+    if($person->getStatus()->isContracted())
+    {
+        echo $this->Form->control('uncleanness');
+    }
     ?>
 </fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<?= $this->Form->button(__("Save"), ['class' => 'btn-primary']); ?>
 <?= $this->Form->end() ?>

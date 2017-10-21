@@ -48,5 +48,5 @@ $this->end();
     echo $this->Form->control('body');
     ?>
 </fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<?= $this->Form->button(__("Save"), ['class' => 'btn-primary']); ?>
 <?= $this->Form->end() ?>
