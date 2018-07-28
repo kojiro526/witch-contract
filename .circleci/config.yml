@@ -14,6 +14,7 @@ jobs:
       - checkout
       - run:
           build.sh -r ./doc/template/reference-part.docx -n -o witch-contract-design.docx -p "--toc --toc-depth=3" ./doc/
-      - run: mv witch-contract-design.docx /tmp/artifacts
+      - run:
+          mv witch-contract-design.docx /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
