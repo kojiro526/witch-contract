@@ -1,0 +1,19 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: kojiro526/pandoc-pack
+
+    working_directory: ~/workspace
+
+    steps:
+      - checkout
+      - run:
+          build.sh -r ./doc/template/reference-part.docx -n -o witch-contract-design.docx -p "--toc --toc-depth=3" ./doc/
+      - run: mv witch-contract-design.docx /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
