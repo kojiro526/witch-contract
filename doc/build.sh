@@ -23,7 +23,7 @@ NAME_OUTPUT=$NAME_BASE.docx
 
 # 図を生成
 dot ./**/images/*.dot -Tpng -O
-java -jar ~/bin/plantuml.jar ./**/images/*.puml
+java  -Dfile.encoding=UTF-8 -jar /usr/local/bin/plantuml.jar ./**/images/*.puml
 blockdiag -Tpng --antialias --no-transparency ./**/images/*.blockdiag
 seqdiag -Tpng --antialias --no-transparency ./**/images/*.seqdiag
 actdiag -Tpng --antialias --no-transparency ./**/images/*.actdiag
