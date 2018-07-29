@@ -13,7 +13,11 @@ jobs:
     steps:
       - checkout
       - run:
-          build.sh -r ./doc/template/reference-part.docx -n -o witch-contract-design.docx -p "--toc --toc-depth=3" ./doc/
+          apt-get install -yqq curl
+      - run:
+          build.sh -f -n -r ./doc/template/reference-part-2.docx -o witch-contract-design.docx -p "--toc --toc-depth=3" ./doc/
+      - run:
+          curl https://slack.com/api/files.upload -F token="${SLACK_TOKEN}" -F channels="${SLACK_CHANNEL}" -F title="Document updated" -F filename="witch-contract-design.docx" -F file=@"$(pwd)/witch-contract-design.docx"
       - run:
           mv witch-contract-design.docx /tmp/artifacts
       - store_artifacts:
