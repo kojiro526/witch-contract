@@ -64,6 +64,7 @@ class PersonsTable extends Table
         $validator
             ->integer('age')
             ->requirePresence('age', 'create')
+            ->range('age', [10, 150])
             ->notEmpty('age');
 
         $validator
