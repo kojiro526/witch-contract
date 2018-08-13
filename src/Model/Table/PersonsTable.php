@@ -64,11 +64,11 @@ class PersonsTable extends Table
         $validator
             ->integer('age')
             ->requirePresence('age', 'create')
+            ->range('age', [10, 150])
             ->notEmpty('age');
 
         $validator
             ->integer('status')
-            ->requirePresence('status', 'create')
             ->notEmpty('status');
 
         $validator
@@ -87,7 +87,6 @@ class PersonsTable extends Table
 
         $validator
             ->integer('uncleanness')
-            ->requirePresence('uncleanness', 'create')
             ->notEmpty('uncleanness');
 
         return $validator;
