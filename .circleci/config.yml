@@ -13,12 +13,18 @@ jobs:
     steps:
       - checkout
       - run:
-          apt-get install -yqq curl
+          echo "export FILENAME_TIMESTAMP=$(date +%H%m%d-%H%M)" >> $BASH_ENV
+          source $BASH_ENV
       - run:
-          build.sh -f -n -r ./doc/template/reference-part-2.docx -o witch-contract-design-$(dat +%H%m%d-%H%M).docx -p "--toc --toc-depth=3" ./doc/
+          apt-get install -yqq curl git
       - run:
-          curl https://slack.com/api/files.upload -F token="${SLACK_TOKEN}" -F channels="${SLACK_CHANNEL}" -F title="Document updated" -F filename="witch-contract-design.docx" -F file=@"$(pwd)/witch-contract-design.docx" -F initial_comment="https://bitbucket.org/kojiro526/witch-contract/commits/(git rev-parse HEAD) \n\n branch: $(git rev-parse --abbrev-ref HEAD)"
+          build.sh -f -n -r ./doc/template/reference-part-2.docx -o witch-contract-design-${FILENAME_TIMESTAMP}.docx -p "--toc --toc-depth=3" ./doc/
       - run:
-          mv witch-contract-design.docx /tmp/artifacts
+          curl https://slack.com/api/files.upload -F token="${SLACK_TOKEN}" -F channels="${SLACK_CHANNEL}" -F title="witch-contract-design ${FILENAME_TIMESTAMP}" -F filename="witch-contract-design-${FILENAME_TIMESTAMP}.docx" -F file=@"$(pwd)/witch-contract-design-${FILENAME_TIMESTAMP}.docx" -F initial_comment="https://bitbucket.org/kojiro526/witch-contract/commits/$(git rev-parse HEAD)"
+      - run:
+          name: Move to artifacts
+          command: |
+            mkdir -p /tmp/artifacts
+            mv witch-contract-design-${FILENAME_TIMESTAMP}.docx /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
