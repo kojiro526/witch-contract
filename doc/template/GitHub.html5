@@ -144,7 +144,7 @@ $endif$
 $----------------------------------------------------------------------> Git
 $if(git-url)$
 <div>
-Last commit: <a href="$git-url$">$git-url$</a>
+Last commit: <a href="$git-url$/$git-commit$">$git-commit$</a>
 </div>
 $endif$
 $-------------------------------------------------------------------------------
