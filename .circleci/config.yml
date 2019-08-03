@@ -16,7 +16,9 @@ jobs:
           echo "export FILENAME_TIMESTAMP=$(date +%H%m%d-%H%M)" >> $BASH_ENV
           source $BASH_ENV
       - run:
-          apt-get install -yqq curl git
+          command: |
+            apt-get update
+            apt-get install -yqq curl git
       - run:
           build.sh -f -n -r ./doc/template/reference-part-2.docx -o witch-contract-design-${FILENAME_TIMESTAMP}.docx -p "--toc --toc-depth=3" ./doc/
       - run:
