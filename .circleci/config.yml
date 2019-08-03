@@ -7,15 +7,13 @@ jobs:
   build:
     docker:
       - image: kojiro526/pandoc-pack
-        environment:
-          TZ: Asia/Tokyo
 
     working_directory: ~/workspace
 
     steps:
       - checkout
       - run:
-          echo "export FILENAME_TIMESTAMP=$(date +%Y%m%d-%H%M)" >> $BASH_ENV
+          echo "export FILENAME_TIMESTAMP=$(TZ=Asia/Tokyo date +%Y%m%d-%H%M)" >> $BASH_ENV
       - run:
           command: |
             apt-get update
