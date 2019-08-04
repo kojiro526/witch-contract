@@ -4,6 +4,7 @@ services:
   db:
     container_name: wconsys-db
     image: mariadb:10.2
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     environment:
       - MYSQL_ROOT_PASSWORD=hogehoge123
       - MYSQL_DATABASE=wconsys
