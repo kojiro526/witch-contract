@@ -1,0 +1,30 @@
+@startuml{er.png}
+
+entity "persons" {
+  + id [PK]
+  ==
+  name : varchar(20)
+  age : int
+  status : int
+  reliability : varchar(5)
+  expectation : int
+  hope : int
+  uncleanness : int
+  contracted_at : date
+  created : datetime
+  modified : datetime
+}
+
+entity "negotiations" {
+  + id [PK]
+  ==
+  #person_id : int <<FK>>
+  negotiated_at : date
+  body : text
+  created : datetime
+  modified : datetime
+}
+
+persons ||--o{ negotiations
+
+@enduml
